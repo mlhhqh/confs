@@ -1,0 +1,27 @@
+.colorspan {
+  border-radius: 4px;
+}
+
+.monaco-editor .ced-1-TextEditorDecorationType24-3::before {
+  border-radius: 4px;
+}
+
+.monaco-editor .suggest-widget {
+  border-radius: 15px 15px 15px 15px;
+  box-shadow: 0 0 15px 15px rgba(0, 0, 0, 0.1);
+  background-color: #202020 !important;
+  overflow: hidden;
+  padding: 10px;
+}
+
+.monaco-editor .monaco-highlighted-label .highlight {
+  color: #79bcb6;
+}
+
+.monaco-editor .suggest-widget .monaco-list .monaco-list-row.focused {
+  background-color: #485668 !important;
+}
+
+.monaco-editor .monaco-list-row:hover:not(.selected):not(.focused) {
+  background-color: #485668 !important;
+}
