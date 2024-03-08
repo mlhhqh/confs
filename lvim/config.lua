@@ -81,3 +81,4 @@ wk.register({x = {
   name = "file",
   y = {"", "Jeff"}
 }}, {})
+vim.keymap.set("i", "jk", "<Esc>")
