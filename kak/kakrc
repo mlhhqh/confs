@@ -1,0 +1,33 @@
+eval %sh{kak-lsp --kakoune -s $kak_session}  # Not needed if you load it with plug.kak.
+lsp-enable
+
+hook global InsertChar k %{ try %{
+  exec -draft hH <a-k>jk<ret> d
+  exec <esc>
+}}
+
+eval %sh{ kak-tree-sitter -dks --session $kak_session }
+colorscheme tomorrow-night
+add-highlighter global/ number-lines -relative
+set global ui_options terminal_assistant=none
+lsp-auto-hover-enable
+lsp-auto-hover-insert-mode-enable
+lsp-auto-signature-help-enable
+lsp-inlay-diagnostics-enable global
+
+hook global WinSetOption filetype=go %{
+  hook window -group semantic-tokens BufReload .* lsp-semantic-tokens
+  hook window -group semantic-tokens NormalIdle .* lsp-semantic-tokens
+  hook window -group semantic-tokens InsertIdle .* lsp-semantic-tokens
+  hook -once -always window WinSetOption filetype=.* %{
+    remove-hooks window semantic-tokens
+  }
+}
+
+hook global WinSetOption filetype=go %{
+    hook window BufWritePre .* lsp-formatting-sync
+}
+
+define-command mycmd -docstring "test" %k{
+    lsp-signature-help
+}
