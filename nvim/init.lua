@@ -21,6 +21,6 @@ require "paq" { "savq/paq-nvim", -- Let Paq manage itself
 	{ "RRethy/vim-illuminate" },
 }
 
-require("ui")
+require("myui")
 require("mylsp")
 require("myllm")
