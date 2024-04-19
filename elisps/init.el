@@ -10,7 +10,7 @@
  '(custom-safe-themes
    '("dbf0cd368e568e6139bb862c574c4ad4eec1859ce62bc755d2ef98f941062441" "ee0785c299c1d228ed30cf278aab82cf1fa05a2dc122e425044e758203f097d2" default))
  '(package-selected-packages
-   '(eldoc-box corfu company markdown-mode timu-macos-theme adwaita-dark-theme)))
+   '(anzu doom-modeline adaptive-wrap ace-window evil-escape evil svelte-mode eldoc-box corfu company markdown-mode timu-macos-theme adwaita-dark-theme)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -22,7 +22,7 @@
 ;;(add-to-list 'treesit-language-source-alist
 ;;	     '(typescript . ("https://github.com/tree-sitter/tree-sitter-typescript" "master" "typescript/src")))
 (load "~/.config/emacs/ui.el")
-(setq treesit-font-lock-level 4)
+;;(setq treesit-font-lock-level 4)
 (electric-pair-mode t)
 
 ;; (global-company-mode t)
@@ -50,3 +50,36 @@
 
 (setq corfu-popupinfo-delay 0)
 (eldoc-box-hover-at-point-mode t)
+
+(use-package eglot
+  :config
+  (add-to-list 'eglot-server-programs
+           '(svelte-mode . ("svelteserver" "--stdio"))))
+
+(setq-default evil-escape-key-sequence "jk")
+(evil-mode)
+(evil-escape-mode)
+(global-set-key (kbd "M-a") 'ace-window)
+
+(setq display-line-numbers-type 'relative)
+(global-display-line-numbers-mode)
+
+(add-to-list 'eglot-server-programs '((go-mode go-ts-mode) .
+    ("gopls" :initializationOptions
+      (:hints (:parameterNames t
+               :rangeVariableTypes t
+               :functionTypeParameters t
+               :assignVariableTypes t
+               :compositeLiteralFields t
+               :compositeLiteralTypes t
+               :constantValues t)))))
+
+(global-set-key (kbd "C-c C-c") 'open-config)
+
+(defun open-config ()
+    "Open Emacs config file in the current buffer."
+    (interactive)
+    (find-file "~/.config/emacs/init.el"))
+
+(doom-modeline-mode)
+(anzu-mode)
