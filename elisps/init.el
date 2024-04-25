@@ -8,9 +8,9 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
-   '("dbf0cd368e568e6139bb862c574c4ad4eec1859ce62bc755d2ef98f941062441" "ee0785c299c1d228ed30cf278aab82cf1fa05a2dc122e425044e758203f097d2" default))
+   '("993aac313027a1d6e70d45b98e121492c1b00a0daa5a8629788ed7d523fe62c1" "dbf0cd368e568e6139bb862c574c4ad4eec1859ce62bc755d2ef98f941062441" "ee0785c299c1d228ed30cf278aab82cf1fa05a2dc122e425044e758203f097d2" default))
  '(package-selected-packages
-   '(anzu doom-modeline adaptive-wrap ace-window evil-escape evil svelte-mode eldoc-box corfu company markdown-mode timu-macos-theme adwaita-dark-theme)))
+   '(dired-sidebar vscode-dark-plus-theme consult vterm treemacs hotfuzz dape marginalia vertico anzu doom-modeline adaptive-wrap ace-window evil-escape evil eldoc-box corfu company markdown-mode timu-macos-theme adwaita-dark-theme)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -83,3 +83,13 @@
 
 (doom-modeline-mode)
 (anzu-mode)
+(vertico-mode)
+(marginalia-mode)
+(setq completion-styles '(hotfuzz))
+
+(load "/var/home/me/Schreibtisch/xfel-mode-line/xfel-mode-line.el")
+;(xfel-mode-line-mode 1)
+(eldoc-box-hover-at-point-mode 1)
+; ~/.emacs
+(add-to-list 'load-path "/var/home/me/Schreibtisch/svelte-mode")
+(require 'svelte-mode)

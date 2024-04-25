@@ -2,14 +2,19 @@ require("autoclose").setup({})
 
 local twilight = require("twilight")
 twilight.setup({})
-twilight.enable()
-
+--twilight.enable()
 
 vim.keymap.set("i", "jk", "<Esc>")
 
 vim.wo.relativenumber = true
 vim.o.cmdheight = 0
-vim.cmd.colorscheme("material-deep-ocean")
+vim.cmd.colorscheme("vscode")
+vim.opt.linebreak = true
+vim.opt.breakindent = true
+--vim.cmd.colorscheme("material-deep-ocean")
+
+local outline = require("outline")
+outline.setup({})
 
 local cmp = require('cmp')
 cmp.setup({

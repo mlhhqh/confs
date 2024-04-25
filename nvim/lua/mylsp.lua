@@ -1,4 +1,3 @@
-
 local lspconfig = require("lspconfig")
 lspconfig.gopls.setup({
 	settings = {
@@ -15,10 +14,32 @@ lspconfig.gopls.setup({
 		},
 	},
 })
+local neodev = require("neodev")
+neodev.setup({})
 lspconfig.lua_ls.setup({})
 require "lsp_signature".setup({
-	bind = true, -- This is mandatory, otherwise border config won't get registered.
+	bind = false, -- This is mandatory, otherwise border config won't get registered.
 	handler_opts = { border = "rounded" }
+})
+require'lspconfig'.tsserver.setup{
+  filetypes = {
+    "javascript",
+    "typescript",
+    "typescriptreact",
+    "typescript.tsx",
+    "vue",
+    "svelte"
+  },
+}
+
+require'lspconfig'.cssls.setup({
+	filetypes = {
+		"ts",
+		"tsx",
+		"js",
+		"jsx",
+		"svelte"
+	}
 })
 
 -- Get the runtime directory
@@ -37,7 +58,7 @@ vim.keymap.set('n', '<C-h>',
 )
 
 require 'nvim-treesitter.configs'.setup {
-	ensure_installed = { "c", "lua", "go", "markdown" },
+	ensure_installed = { "c", "lua", "go", "markdown", "typescript", "javascript" },
 	sync_install = false,
 	auto_install = true,
 	highlight = {
@@ -48,3 +69,6 @@ require 'nvim-treesitter.configs'.setup {
 		enable = true
 	}
 }
+
+-- Disable tsserver, if you have
+-- lspconfig.tsserver.setup { ... }
