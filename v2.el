@@ -12,7 +12,7 @@
  '(custom-safe-themes
    '("ee0785c299c1d228ed30cf278aab82cf1fa05a2dc122e425044e758203f097d2" "dbf0cd368e568e6139bb862c574c4ad4eec1859ce62bc755d2ef98f941062441" default))
  '(package-selected-packages
-   '(vterm posframe company-quickhelp-terminal company hotfuzz which-key adwaita-dark-theme doom-modeline ace-window eglot-signature-eldoc-talkative evil-escape vertico marginalia timu-macos-theme evil markdown-mode go-mode)))
+   '(meow vterm posframe company-quickhelp-terminal company hotfuzz which-key adwaita-dark-theme doom-modeline ace-window eglot-signature-eldoc-talkative evil-escape vertico marginalia timu-macos-theme evil markdown-mode go-mode)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -20,7 +20,6 @@
  ;; If there is more than one, they won't work right.
  )
 
-(evil-mode 1)
 (marginalia-mode 1)
 (vertico-mode 1)
 (load-theme 'timu-macos)
@@ -31,9 +30,6 @@
     "Open Emacs config file in the current buffer."
     (interactive)
     (find-file "~/.config/emacs/init.el"))
-
-(setq evil-escape-key-sequence "jk")
-(evil-escape-mode 1)
 
 (require 'eglot-signature-eldoc-talkative)
 
@@ -116,7 +112,12 @@
 (defun my-eglot-after-save ()
   "Function to run after saving a buffer in eglot session."
   (when (bound-and-true-p eglot--managed-mode)
-    (eglot-code-action-organize-imports)
+    ;; (eglot-code-action-organize-imports 0 100) ;; How?
     (eglot-format))) ; Replace 'your-command-here' with the command you want to run
 
 (add-hook 'after-save-hook 'my-eglot-after-save)
+
+(evil-mode 1)
+(setq evil-escape-key-sequence "jk")
+(evil-escape-mode 1)
+
