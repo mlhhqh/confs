@@ -1,0 +1,37 @@
+.monaco-editor .suggest-widget {
+    /* background-color: #2c2c2c !important; */
+    border-radius: 15px 15px 15px 15px;
+    padding: 5px;
+    box-shadow: 0 0 15px 15px rgba(0, 0, 0, 0.1);
+
+    overflow: hidden !important;
+    outline: none;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.monaco-editor .suggest-details {
+    border-radius: 15px !important;
+    padding: 5px;
+    overflow: hidden;
+    box-shadow: 0 0 15px 15px rgba(0, 0, 0, 0.1);
+    margin-left: 10px;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.monaco-list-row {
+    border-radius: 7.5px;
+}
+
+.monaco-hover {
+    border-radius: 15px !important;
+    border: 1px solid rgba(255,255,255,0.1) !important;
+    /* outline: 2px  !important; */
+    overflow: hidden !important;
+    padding: 5px !important;
+    outline: none !important;
+}
+
+.parameter-hints-widget {
+    border-radius: 15px !important;
+    padding: 5px;
+}
