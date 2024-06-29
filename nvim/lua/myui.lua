@@ -17,27 +17,61 @@ local outline = require("outline")
 outline.setup({})
 
 local cmp = require('cmp')
+
+local cmp_kinds = {
+	Text = '  ',
+	Method = '  ',
+	Function = '  ',
+	Constructor = '  ',
+	Field = '  ',
+	Variable = '  ',
+	Class = '  ',
+	Interface = '  ',
+	Module = '  ',
+	Property = '  ',
+	Unit = '  ',
+	Value = '  ',
+	Enum = '  ',
+	Keyword = '  ',
+	Snippet = '  ',
+	Color = '  ',
+	File = '  ',
+	Reference = '  ',
+	Folder = '  ',
+	EnumMember = '  ',
+	Constant = '  ',
+	Struct = '  ',
+	Event = '  ',
+	Operator = '  ',
+	TypeParameter = '  ',
+}
 cmp.setup({
+	formatting = {
+		fields = { "kind", "abbr" },
+		format = function(_, vim_item)
+			vim_item.kind = cmp_kinds[vim_item.kind] or ""
+			return vim_item
+		end,
+	},
 	snippet = {
 	},
 	window = {
-		--completion = cmp.config.window.bordered(),
-		--documentation = cmp.config.window.bordered(),
-		completion = {
-			border = "rounded",
-			winhighlight = "Normal:CmpNormal",
-		},
-		documentation = {
-			border = "rounded",
-			winhighlight = "Normal:CmpPmenu,CursorLine:PmenuSel,Search:None",
-		},
+		completion = cmp.config.window.bordered({
+			winhighlight = "Normal:Normal,FloatBorder:BorderBG,CursorLine:PmenuSel,Search:None",
+		}),
+		documentation = cmp.config.window.bordered({
+			winhighlight = "Normal:Normal,FloatBorder:BorderBG,CursorLine:PmenuSel,Search:None",
+		})
 	},
 	mapping = cmp.mapping.preset.insert({
 		['<C-b>'] = cmp.mapping.scroll_docs(-4),
 		['<C-f>'] = cmp.mapping.scroll_docs(4),
 		['<C-Space>'] = cmp.mapping.complete(),
-		['<C-e>'] = cmp.mapping.abort(),
+		['<C-c>'] = cmp.mapping.abort(),
 		['<CR>'] = cmp.mapping.confirm({ select = true }),
 	}),
 	sources = cmp.config.sources({ { name = 'nvim_lsp' }, }, { { name = 'buffer' }, })
 })
+
+-- https://github.com/neovide/neovide/issues/1993
+-- vim.cmd "highlight! BorderBG guibg=NONE guifg=#3a86ff"
