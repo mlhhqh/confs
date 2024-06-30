@@ -1,8 +1,8 @@
 local lspconfig = require("lspconfig")
 lspconfig.gopls.setup({
-  on_attach = function(client, bufnr)
-    require("inlay-hints").on_attach(client, bufnr)
-  end,
+	on_attach = function(client, bufnr)
+		require("inlay-hints").on_attach(client, bufnr)
+	end,
 	settings = {
 		gopls = {
 			["ui.inlayhint.hints"] = {
@@ -74,7 +74,16 @@ require 'nvim-treesitter.configs'.setup {
 	},
 	illuminate = {
 		enable = true
-	}
+	},
+	incremental_selection = {
+		enable = true,
+		keymaps = {
+			init_selection = "gnn",
+			node_incremental = "grn",
+			scope_incremental = "grc",
+			node_decremental = "grm",
+		},
+	},
 }
 
 -- Disable tsserver, if you have
