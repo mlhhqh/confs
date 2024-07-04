@@ -1,0 +1,88 @@
+{
+  "continue.enableTabAutocomplete": false,
+  "continue.telemetryEnabled": false,
+  "telemetry.telemetryLevel": "off",
+  "update.mode": "none",
+  "window.menuBarVisibility": "hidden",
+  "editor.minimap.enabled": false,
+  "editor.fontFamily": "Iosevka Fixed",
+  "editor.fontSize": 18,
+  "editor.wordWrap": "on",
+  "editor.multiCursorModifier": "alt",
+  "editor.autoClosingDelete": "auto",
+  "editor.autoClosingOvertype": "auto",
+  "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
+  "editor.experimentalInlineEdit.backgroundColoring": true,
+  "editor.experimentalInlineEdit.enabled": true,
+  "editor.experimental.asyncTokenization": true,
+  "editor.experimentalInlineEdit.showToolbar": "always",
+  "editor.foldingImportsByDefault": true,
+  "editor.guides.bracketPairs": true,
+  "editor.guides.bracketPairsHorizontal": true,
+  "editor.inlayHints.padding": true,
+  "editor.linkedEditing": true,
+  "editor.fontWeight": "500",
+  "editor.lineNumbers": "relative",
+  "go.useLanguageServer": true,
+  "terminal.integrated.profiles.linux": {
+    "bash": {
+      "path": "bash",
+      "icon": "terminal-bash"
+    },
+    "nu": {
+      "path": "nu"
+    },
+    "fish": {
+      "path": "fish",
+    }
+  },
+  "terminal.integrated.defaultProfile.linux": "fish",
+  "diffEditor.experimental.showMoves": true,
+  "diffEditor.renderSideBySide": false,
+  "workbench.editor.editorActionsLocation": "titleBar",
+  "workbench.editor.showTabs": "multiple",
+  // "extensions.experimental.affinity": {
+  //   "jasew.vscode-helix-emulation": 1
+  // },
+  "editor.folding": true,
+  "editor.roundedSelection": true,
+  "editor.cursorBlinking": "smooth",
+  "editor.cursorStyle": "line",
+  "editor.fontLigatures": true,
+  "editor.lineHeight": 1.35,
+  "editor.cursorSmoothCaretAnimation": "on",
+  "breadcrumbs.enabled": true,
+  "editor.scrollbar.horizontalScrollbarSize": 0,
+  "editor.scrollbar.verticalScrollbarSize": 0,
+  "window.titleBarStyle": "native",
+  "apc.font.family": "Iosevka",
+  "editor.minimap.renderCharacters": false,
+  "workbench.tree.indent": 15,
+  "editor.bracketPairColorization.enabled": true,
+  "workbench.tree.renderIndentGuides": "always",
+  "editor.guides.indentation": true,
+  "editor.guides.highlightActiveIndentation": true,
+  "editor.guides.highlightActiveBracketPair": true,
+  "workbench.colorTheme": "oxocarbon-5",
+  "accessibility.dimUnfocused.enabled": true,
+  "accessibility.verbosity.comments": true,
+  "application.experimental.rendererProfiling": true,
+  "workbench.view.alwaysShowHeaderActions": true,
+  "workbench.list.smoothScrolling": true,
+  "editor.smoothScrolling": true,
+  "terminal.integrated.smoothScrolling": true,
+  "apc.imports": [
+    "file:///var/home/me/Schreibtisch/vsc.css"
+  ],
+  "extensions.experimental.affinity": {
+    "asvetliakov.vscode-neovim": 1
+  },
+  "vscode-neovim.compositeKeys": {
+    "jk": {
+      "command": "vscode-neovim.lua",
+      "args": [
+        "vim.api.nvim_input('<ESC>') require('vscode').action('workbench.action.files.save')"
+      ]
+    }
+  }
+}

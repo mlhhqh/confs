@@ -8,13 +8,15 @@ vim.keymap.set("i", "jk", "<Esc>")
 
 vim.wo.relativenumber = true
 vim.o.cmdheight = 0
-vim.cmd.colorscheme("vscode")
+vim.cmd.colorscheme("oxocarbon")
 vim.opt.linebreak = true
 vim.opt.breakindent = true
 --vim.cmd.colorscheme("material-deep-ocean")
 
 local outline = require("outline")
-outline.setup({})
+outline.setup({
+	wrap = true
+})
 
 local cmp = require('cmp')
 
@@ -74,4 +76,4 @@ cmp.setup({
 })
 
 -- https://github.com/neovide/neovide/issues/1993
--- vim.cmd "highlight! BorderBG guibg=NONE guifg=#3a86ff"
+vim.cmd "highlight! BorderBG guibg=NONE guifg=#3a86ff"
