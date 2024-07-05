@@ -38,3 +38,4 @@ vim.api.nvim_create_autocmd('LspAttach', {
 		end, opts)
 	end,
 })
+vim.api.nvim_set_keymap('n', '<C-s>', ':lua vim.lsp.buf.format()<CR>', { noremap = true })

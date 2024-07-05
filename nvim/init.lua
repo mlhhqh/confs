@@ -19,7 +19,7 @@ require "paq" { "savq/paq-nvim", -- Let Paq manage itself
 	{ "HiPhish/rainbow-delimiters.nvim" },
 	{ "MysticalDevil/inlay-hints.nvim" },
 	{ "nvim-treesitter/nvim-treesitter-textobjects" },
-	{ "nvim-tree/nvim-tree.lua" },
+
 	{ "folke/trouble.nvim" },
 	{ "Bekaboo/dropbar.nvim" },
 	{ "marko-cerovac/material.nvim" }, -- Deep water
@@ -145,6 +145,7 @@ require 'nvim-treesitter.configs'.setup {
 
 -- optionally enable 24-bit colour
 vim.opt.termguicolors = true
+require("eagle").setup({})
 
 require('lspconfig').jsonls.setup {
 	settings = {
@@ -154,3 +155,79 @@ require('lspconfig').jsonls.setup {
 		},
 	},
 }
+
+
+-- ~/.config/nvim/pack/plugins/start/nvim-telescope-cmdhistory/init.lua
+local telescope = require('telescope')
+local actions = require('telescope.actions')
+local pickers = require("telescope.pickers")
+local finders = require("telescope.finders")
+local config = require("telescope.config")
+local sorters = require("telescope.sorters")
+local action_state = require('telescope.actions.state')
+
+-- Function to prompt for a keybinding and set it for the selected command
+local function prompt_for_keybinding(command)
+	-- Prompt the user to enter a keybinding
+	local keybinding = vim.fn.input("Enter keybinding (e.g., <C-m>): ")
+
+	if keybinding == "" then
+		print("No keybinding entered.")
+		return
+	end
+
+	-- Define the path to the Lua keybindings file
+	local keybindings_file = vim.fn.expand("~/.config/nvim/lua/keybindings.lua")
+
+	-- Create the Lua command for keybinding and write it to the file
+	local keybinding_command = string.format("vim.api.nvim_set_keymap('n', '%s', ':%s<CR>', { noremap = true })\n",
+		keybinding, command)
+	local file = io.open(keybindings_file, "a")
+	if file then
+		file:write(keybinding_command)
+		file:close()
+		print("Keybinding " .. keybinding .. " written to " .. keybindings_file)
+	else
+		print("Failed to write keybinding to file.")
+	end
+
+	print("Wrote?")
+	-- Source the Lua file to apply the new keybinding
+	-- dofile(keybindings_file)
+end
+
+-- Custom Telescope picker for command history
+local function command_history_picker()
+	local commands = {}
+	for i = 1, vim.fn.histnr(':') do
+		local cmd = vim.fn.histget(':', -i)
+		if cmd ~= "" then
+			table.insert(commands, cmd)
+		end
+	end
+
+	pickers.new({}, {
+		prompt_title = 'Command History',
+		finder = finders.new_table {
+			results = commands
+		},
+		sorter = sorters.get_generic_fuzzy_sorter({}),
+		attach_mappings = function(prompt_bufnr, map)
+			actions.select_default:replace(function()
+				actions.close(prompt_bufnr)
+				local selection = action_state.get_selected_entry()
+				if selection then
+					prompt_for_keybinding(selection[1])
+				end
+			end)
+			return true
+		end,
+	}):find()
+end
+
+-- Create a custom command to invoke the Telescope command history picker
+vim.api.nvim_create_user_command('CommandHistoryPicker', command_history_picker, {})
+
+-- Usage: :CommandHistoryPicker
+--
+require("keybindings")
