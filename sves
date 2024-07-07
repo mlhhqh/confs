@@ -1,37 +1,164 @@
 .monaco-editor .suggest-widget {
-    /* background-color: #2c2c2c !important; */
-    border-radius: 15px 15px 15px 15px;
-    padding: 5px;
-    box-shadow: 0 0 15px 15px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(16px);
 
+    /* background-color: rgba(255, 255, 255, 0.33) !important; */
+    background-color: rgba(28, 28, 30, 0.66) !important;
+    /* A very dark grey with slight transparency */
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    /* A light grey border with low opacity */
+    border-radius: 8px !important;
+    /* A slight rounding of the edges */
+    box-shadow: rgba(0, 0, 0, 0.9) 0 0 50px !important;
+
+    /* A soft, diffuse shadow */
+
+
+    /* background-color: rgba(0, 0, 0, 0.44) !important;
+    box-shadow: rgba(100,100,100,0.88) 0 0 30px !important;
+    border: 1.5px solid rgba(255,255,255,0.33) !important;
+    border-radius: 15px !important; */
+    padding: 5px;
+    /* box-shadow: rgba(0, 0, 0, 0.88) 0 0 30px !important; */
+    /* border: 1px solid rgba(0, 0, 0, 1) !important; */
+    outline: none !important;
     overflow: hidden !important;
-    outline: none;
-    border: 1px solid rgba(255,255,255,0.1);
+
+    box-shadow: rgba(0, 0, 0, 0.9) 0 0 100px !important;
+}
+
+.suggest-details {
+    backdrop-filter: blur(16px);
+    /* background-color: rgba(0, 0, 0, 0.44) !important;
+    box-shadow: rgba(100,100,100,0.88) 0 0 30px !important;
+    border: 1.5px solid rgba(255,255,255,0.33) !important;
+    border-radius: 15px !important; */
+    backdrop-filter: blur(16px);
+    /* background-color: rgba(255, 255, 255, 0.33) !important; */
+    background-color: rgba(28, 28, 30, 0.66) !important;
+    /* A very dark grey with slight transparency */
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    /* A light grey border with low opacity */
+    border-radius: 8px !important;
+    /* A slight rounding of the edges */
+    box-shadow: rgba(0, 0, 0, 0.9) 0 0 100px !important;
+    /* A soft, diffuse shadow */
+    /* A soft, diffuse shadow */
+
+    padding: 5px;
+    outline: none !important;
+    overflow: hidden !important;
+    margin-left: 15px !important;
 }
 
 .monaco-editor .suggest-details {
-    border-radius: 15px !important;
+    backdrop-filter: blur(16px);
+    /* background-color: rgba(255, 255, 255, 0.33) !important; */
+    background-color: rgba(28, 28, 30, 0.66) !important;
+    /* A very dark grey with slight transparency */
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    /* A light grey border with low opacity */
+    border-radius: 8px !important;
+    /* A slight rounding of the edges */
+    box-shadow: rgba(0, 0, 0, 0.6) 0 0 20px !important;
     padding: 5px;
-    overflow: hidden;
-    box-shadow: 0 0 15px 15px rgba(0, 0, 0, 0.1);
-    margin-left: 10px;
-    border: 1px solid rgba(255,255,255,0.1);
+    /* background-color: rgba(0, 0, 0, 0.44) !important;
+    box-shadow: rgba(100,100,100,0.88) 0 0 30px !important;
+    border: 1.5px solid rgba(255,255,255,0.33) !important; */
+    outline: none !important;
+    overflow: hidden !important;
 }
 
 .monaco-list-row {
     border-radius: 7.5px;
+    border-radius: 25px !important;
+    overflow: hidden !important;
 }
 
 .monaco-hover {
-    border-radius: 15px !important;
-    border: 1px solid rgba(255,255,255,0.1) !important;
-    /* outline: 2px  !important; */
-    overflow: hidden !important;
-    padding: 5px !important;
+    backdrop-filter: blur(16px);
+    /* background-color: rgba(255, 255, 255, 0.33) !important; */
+    background-color: rgba(28, 28, 30, 0.66) !important;
+    /* A very dark grey with slight transparency */
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    /* A light grey border with low opacity */
+    border-radius: 8px !important;
+    /* A slight rounding of the edges */
+    box-shadow: rgba(0, 0, 0, 0.6) 0 0 20px !important;
+    /* border-radius: 15px !important; */
+    padding: 5px;
+    /* background-color: rgba(0, 0, 0, 0.44) !important; */
+    /* box-shadow: rgba(100,100,100,0.88) 0 0 30px !important; */
+    /* border: 1.5px solid rgba(255,255,255,0.33) !important; */
     outline: none !important;
+    overflow: hidden !important;
 }
 
 .parameter-hints-widget {
-    border-radius: 15px !important;
+    backdrop-filter: blur(16px);
+    /* background-color: rgba(255, 255, 255, 0.33) !important; */
+    background-color: rgba(28, 28, 30, 0.66) !important;
+    /* A very dark grey with slight transparency */
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    /* A light grey border with low opacity */
+    border-radius: 8px !important;
+    /* A slight rounding of the edges */
+    box-shadow: rgba(0, 0, 0, 0.6) 0 0 20px !important;
+    /* border-radius: 15px !important; */
     padding: 5px;
+    /* background-color: rgba(0, 0, 0, 0.44) !important; */
+    /* box-shadow: rgba(100,100,100,0.88) 0 0 30px !important; */
+    /* border: 1.5px solid rgba(255,255,255,0.33) !important; */
+    outline: none !important;
+    overflow: hidden !important;
 }
+
+.quick-input-widget {
+    backdrop-filter: blur(16px);
+    /* background-color: rgba(255, 255, 255, 0.33) !important; */
+    background-color: rgba(28, 28, 30, 0.66) !important;
+    /* A very dark grey with slight transparency */
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    /* A light grey border with low opacity */
+    border-radius: 8px !important;
+    /* A slight rounding of the edges */
+    box-shadow: rgba(0, 0, 0, 0.6) 0 0 20px !important;
+    margin-top: 10% !important;
+    /* border-radius: 15px !important; */
+    padding: 5px;
+    /* background-color: rgba(0, 0, 0, 0.44) !important; */
+    /* box-shadow: rgba(100,100,100,0.88) 0 0 30px !important; */
+    /* border: 1.5px solid rgba(255,255,255,0.33) !important; */
+    outline: none !important;
+    overflow: hidden !important;
+}
+
+.quick-input-list>.monaco-list>.monaco-scrollable-element>.monaco-list-rows>.monaco-list-row {
+    /* color: black; */
+}
+
+.title-label>h2 {
+    display: none;
+}
+
+.quick-input-widget>.quick-input-titlebar {
+    display: none
+}
+
+.quick-input-widget>.quick-input-list>.monaco-list {
+    max-height: 41vh !important;
+}
+
+.quick-input-widget>.quick-input-list .monaco-list-row[aria-label*=\"+\"] .label-description {
+    color: #8ec07c !important;
+}
+
+.quick-input-list>.monaco-list>.monaco-scrollable-element>.monaco-list-rows>.monaco-list-row {
+    font-size: 16px;
+}
+
+/* ".title-label > h2": "display:none;",
+    ".quick-input-widget": "border: solid rgba(255,255,255,0.22) !important; border-width: 0.5px !important; margin-top: 15%;",
+    ".quick-input-widget > .quick-input-titlebar": "display: none",
+    ".quick-input-widget > .quick-input-list > .monaco-list": "max-height: 41vh !important;",
+    ".quick-input-widget > .quick-input-list .monaco-list-row[aria-label*=\" +\"] .label-description": "color: #8ec07c; font-size: 18px;",
+    ".quick-input-list > .monaco-list > .monaco-scrollable-element > .monaco-list-rows > .monaco-list-row": "color: black; font-size: 16px;" */
