@@ -5,8 +5,7 @@
   "update.mode": "none",
   "window.menuBarVisibility": "hidden",
   "editor.minimap.enabled": false,
-  "editor.fontFamily": "Iosevka Fixed",
-  "editor.fontSize": 18,
+  "editor.fontSize": 20,
   "editor.wordWrap": "on",
   "editor.multiCursorModifier": "alt",
   "editor.autoClosingDelete": "auto",
@@ -40,7 +39,7 @@
   "diffEditor.experimental.showMoves": true,
   "diffEditor.renderSideBySide": false,
   "workbench.editor.editorActionsLocation": "titleBar",
-  "workbench.editor.showTabs": "multiple",
+  "workbench.editor.showTabs": "single",
   // "extensions.experimental.affinity": {
   //   "jasew.vscode-helix-emulation": 1
   // },
@@ -55,7 +54,7 @@
   "editor.scrollbar.horizontalScrollbarSize": 0,
   "editor.scrollbar.verticalScrollbarSize": 0,
   "window.titleBarStyle": "native",
-  "apc.font.family": "Iosevka",
+  // "apc.font.family": "Iosevka",
   "editor.minimap.renderCharacters": false,
   "workbench.tree.indent": 15,
   "editor.bracketPairColorization.enabled": true,
@@ -63,7 +62,6 @@
   "editor.guides.indentation": true,
   "editor.guides.highlightActiveIndentation": true,
   "editor.guides.highlightActiveBracketPair": true,
-  "workbench.colorTheme": "oxocarbon-5",
   "accessibility.dimUnfocused.enabled": true,
   "accessibility.verbosity.comments": true,
   "application.experimental.rendererProfiling": true,
@@ -84,5 +82,30 @@
         "vim.api.nvim_input('<ESC>') require('vscode').action('workbench.action.files.save')"
       ]
     }
-  }
+  },
+  "workbench.colorTheme": "MacOS Modern Dark - Ventura Xcode Default",
+  "workbench.colorCustomizations": {
+    "menu.background": "#2e333b70", //context menu
+    "menu.selectionBackground": "#4247509a", //context menu hover
+    "editorWidget.background": "#51586320", //widget and tooltip
+    "quickInput.background": "#2e333b00", //command center drop down menu
+    "notifications.background": "#29303bd7", //Notification background color.
+  },
+  
+
+  "editor.gotoLocation.multipleReferences": "goto",
+  "editor.gotoLocation.multipleDeclarations": "goto",
+  "go.inlayHints.assignVariableTypes": true,
+  "go.inlayHints.compositeLiteralFields": true,
+  "go.inlayHints.compositeLiteralTypes": true,
+  "go.inlayHints.constantValues": true,
+  "go.inlayHints.functionTypeParameters": true,
+  "go.inlayHints.parameterNames": true,
+  "go.inlayHints.rangeVariableTypes": true,
+  "editor.inlayHints.enabled": "onUnlessPressed",
+  "workbench.statusBar.visible": false,
+  "workbench.activityBar.location": "hidden",
+  "editor.wrappingIndent": "same",
+  "editor.wrappingStrategy": "advanced",
+  "editor.wordWrapColumn": 50,
 }
