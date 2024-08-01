@@ -18,7 +18,8 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
-   '("28a104f642d09d3e5c62ce3464ea2c143b9130167282ea97ddcc3607b381823f"
+   '("dbf0cd368e568e6139bb862c574c4ad4eec1859ce62bc755d2ef98f941062441"
+     "28a104f642d09d3e5c62ce3464ea2c143b9130167282ea97ddcc3607b381823f"
      "2d035eb93f92384d11f18ed00930e5cc9964281915689fa035719cab71766a15"
      "f490984d405f1a97418a92f478218b8e4bcc188cf353e5dd5d5acd2f8efd0790"
      "ee0785c299c1d228ed30cf278aab82cf1fa05a2dc122e425044e758203f097d2"
@@ -26,9 +27,11 @@
      default))
  '(package-selected-packages
    '(ace-window adwaita-dark-theme company company-quickhelp
-		company-quickhelp-terminal compat consult evil
-		evil-escape evil-textobj-tree-sitter gptel hotfuzz
-		marginalia markdown-mode poet-theme vertico)))
+		company-quickhelp-terminal compat consult eldoc-box
+		evil evil-escape evil-textobj-tree-sitter gptel
+		hotfuzz impatient-mode marginalia markdown-mode
+		poet-theme timu-macos-theme vertico visual-fill
+		writeroom-mode)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -100,7 +103,7 @@
 (add-to-list 'auto-mode-alist '("\\.go\\'" . go-ts-mode))
 (add-hook 'go-ts-mode-hook 'eglot-ensure)
 (add-hook 'eglot-managed-mode-hook 'indent-bars-mode)
-(load-theme 'adwaita-dark)
+(load-theme 'poet-dark)
 (toggle-word-wrap)
 (global-visual-wrap-prefix-mode)
 
@@ -131,3 +134,10 @@
                  :models '("test")))
 (add-hook 'gptel-post-stream-hook 'gptel-auto-scroll)
 (add-hook 'gptel-post-response-functions 'gptel-end-of-response)
+
+(advice-add 'jsonrpc--log-event :override #'ignore)
+(setopt eglot-events-buffer-size 0)
+(setq gc-cons-threshold (expt 2 30))
+
+(defvar gc-idle-timer
+  (run-with-idle-timer 8 t #'garbage-collect))
