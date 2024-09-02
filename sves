@@ -1,10 +1,27 @@
+.pane-composite-part > .composite > .title-actions {
+    display: none !important;
+}
+
+.pane-composite-part > .composite > .title-label {
+    display: none !important;
+}
+
+.pane-composite-part > .title {
+    display: none !important;
+}
+
+.sidebar {
+    height: 100% !important;
+}
+
 .monaco-editor .suggest-widget {
     backdrop-filter: blur(16px);
 
     /* background-color: rgba(255, 255, 255, 0.33) !important; */
-    background-color: rgba(28, 28, 30, 0.66) !important;
+    background-color: rgba(28, 28, 30, 0.88) !important;
     /* A very dark grey with slight transparency */
     border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    /* border: 1px solid rgba(0, 0, 0, 0.44) !important; */
     /* A light grey border with low opacity */
     border-radius: 8px !important;
     /* A slight rounding of the edges */
@@ -34,8 +51,8 @@
     border-radius: 15px !important; */
     backdrop-filter: blur(16px);
     /* background-color: rgba(255, 255, 255, 0.33) !important; */
-    background-color: rgba(28, 28, 30, 0.66) !important;
-    /* A very dark grey with slight transparency */
+    /* background-color: rgba(255, 255, 255, 0.33) !important; */
+    background-color: rgba(28, 28, 30, 0.88) !important;
     border: 1px solid rgba(255, 255, 255, 0.2) !important;
     /* A light grey border with low opacity */
     border-radius: 8px !important;
@@ -53,8 +70,7 @@
 .monaco-editor .suggest-details {
     backdrop-filter: blur(16px);
     /* background-color: rgba(255, 255, 255, 0.33) !important; */
-    background-color: rgba(28, 28, 30, 0.66) !important;
-    /* A very dark grey with slight transparency */
+    background-color: rgba(28, 28, 30, 0.88) !important;
     border: 1px solid rgba(255, 255, 255, 0.2) !important;
     /* A light grey border with low opacity */
     border-radius: 8px !important;
@@ -77,8 +93,7 @@
 .monaco-hover {
     backdrop-filter: blur(16px);
     /* background-color: rgba(255, 255, 255, 0.33) !important; */
-    background-color: rgba(28, 28, 30, 0.66) !important;
-    /* A very dark grey with slight transparency */
+    background-color: rgba(28, 28, 30, 0.88) !important;
     border: 1px solid rgba(255, 255, 255, 0.2) !important;
     /* A light grey border with low opacity */
     border-radius: 8px !important;
@@ -96,8 +111,7 @@
 .parameter-hints-widget {
     backdrop-filter: blur(16px);
     /* background-color: rgba(255, 255, 255, 0.33) !important; */
-    background-color: rgba(28, 28, 30, 0.66) !important;
-    /* A very dark grey with slight transparency */
+    background-color: rgba(28, 28, 30, 0.88) !important;
     border: 1px solid rgba(255, 255, 255, 0.2) !important;
     /* A light grey border with low opacity */
     border-radius: 8px !important;
@@ -115,8 +129,7 @@
 .quick-input-widget {
     backdrop-filter: blur(16px);
     /* background-color: rgba(255, 255, 255, 0.33) !important; */
-    background-color: rgba(28, 28, 30, 0.66) !important;
-    /* A very dark grey with slight transparency */
+    background-color: rgba(28, 28, 30, 0.88) !important;
     border: 1px solid rgba(255, 255, 255, 0.2) !important;
     /* A light grey border with low opacity */
     border-radius: 8px !important;
@@ -154,6 +167,16 @@
 
 .quick-input-list>.monaco-list>.monaco-scrollable-element>.monaco-list-rows>.monaco-list-row {
     font-size: 16px;
+}
+
+.composite.has-composite-bar.header-or-footer.header {
+    padding-left: 0;
+    justify-content: center;
+}
+
+.composite.has-composite-bar.header-or-footer.header > .composite-bar-container > .composite-bar > .monaco-action-bar > .actions-container, .composite-bar-container {
+    display: flex;
+    justify-content: space-around;
 }
 
 /* ".title-label > h2": "display:none;",
