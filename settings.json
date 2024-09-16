@@ -1,111 +1,234 @@
 {
-  "continue.enableTabAutocomplete": false,
-  "continue.telemetryEnabled": false,
-  "telemetry.telemetryLevel": "off",
-  "update.mode": "none",
-  "window.menuBarVisibility": "hidden",
-  "editor.minimap.enabled": false,
-  "editor.fontSize": 20,
-  "editor.wordWrap": "on",
-  "editor.multiCursorModifier": "alt",
-  "editor.autoClosingDelete": "auto",
-  "editor.autoClosingOvertype": "auto",
-  "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
-  "editor.experimentalInlineEdit.backgroundColoring": true,
-  "editor.experimentalInlineEdit.enabled": true,
-  "editor.experimental.asyncTokenization": true,
-  "editor.experimentalInlineEdit.showToolbar": "always",
-  "editor.foldingImportsByDefault": true,
-  "editor.guides.bracketPairs": true,
-  "editor.guides.bracketPairsHorizontal": true,
-  "editor.inlayHints.padding": true,
-  "editor.linkedEditing": true,
-  "editor.fontWeight": "500",
-  "editor.lineNumbers": "relative",
-  "go.useLanguageServer": true,
-  "terminal.integrated.profiles.linux": {
-    "bash": {
-      "path": "bash",
-      "icon": "terminal-bash"
-    },
-    "nu": {
-      "path": "nu"
-    },
-    "fish": {
-      "path": "fish",
-    }
-  },
-  "terminal.integrated.defaultProfile.linux": "fish",
-  "diffEditor.experimental.showMoves": true,
-  "diffEditor.renderSideBySide": false,
-  "workbench.editor.editorActionsLocation": "titleBar",
-  "workbench.editor.showTabs": "single",
-  // "extensions.experimental.affinity": {
-  //   "jasew.vscode-helix-emulation": 1
-  // },
-  "editor.folding": true,
-  "editor.roundedSelection": true,
-  "editor.cursorBlinking": "smooth",
-  "editor.cursorStyle": "line",
-  "editor.fontLigatures": true,
-  "editor.lineHeight": 1.35,
-  "editor.cursorSmoothCaretAnimation": "on",
-  "breadcrumbs.enabled": true,
-  "editor.scrollbar.horizontalScrollbarSize": 0,
-  "editor.scrollbar.verticalScrollbarSize": 0,
   "window.titleBarStyle": "native",
-  // "apc.font.family": "Iosevka",
+  "continue.enableTabAutocomplete": false,
+  "apc.imports": [
+    // "file:///var/home/me/Schreibtisch/vsc.css"
+    "file:///var/home/me/Schreibtisch/vsc_minimal.css"
+  ],
+  "window.commandCenter": false,
+  "vim.insertModeKeyBindings": [
+    {
+      "before": [
+        "j",
+        "k"
+      ],
+      "after": [
+        "<Esc>"
+      ]
+    }
+  ],
+  "vim.useCtrlKeys": true,
+  "editor.inlayHints.fontSize": 12, // <-- Set the font-size you want
+  // "window.titleBarStyle": "custom",
+  "workbench.colorCustomizations": {
+    "editorGroup.border": "#0000ff32",
+    "editorInlayHint.background": "#00000000",
+    "editorInlayHint.foreground": "#96969676"
+    //   "editorCursor.background": "#000000",
+    //   "editorCursor.foreground": "#ff896f",
+    //   "tab.inactiveBackground": "#181818",
+    //   "editorGroupHeader.tabsBackground": "#181818",
+    //   "editorGroupHeader.border": "#292929",
+  },
+  "breadcrumbs.enabled": false,
+  "editor.minimap.enabled": false,
+  "workbench.layoutControl.enabled": false,
+  "editor.smoothScrolling": true,
+  "editor.cursorSmoothCaretAnimation": "on",
+  "workbench.list.smoothScrolling": true,
+  "terminal.integrated.smoothScrolling": true,
+  "vim.smartRelativeLine": false,
+  // following 5 properties remove gutter elements, comment/uncomment as per your liking
+  "editor.folding": true, // removes code folding arrows
+  // "editor.glyphMargin": false, // removes space for symbols like breakpoint, bookmark, hints icons, etc
+  "editor.roundedSelection": true,
+  "editor.cursorBlinking": "phase",
+  "editor.cursorStyle": "block",
+  "editor.fontLigatures": true,
+  "editor.lineHeight": 1.6,
+  // settings for APC customize UI++ extension
+  // "apc.electron": {
+  //   // "titleBarStyle": "customButtonsOnHover",
+  //   "titleBarOverlay": {
+  //     "color": "#1e2030",
+  //     "symbolColor": "#eeffffc0",
+  //     "height": 32
+  //   },
+  //   "backgroundColor": "#00000000",
+  // },
+  "apc.statusBar": {
+    "position": "editor-bottom",
+  },
+  "apc.sidebar.titlebar": {
+    "height": 36
+  },
+  "apc.listRow": {
+    "height": 25
+  },
+  "apc.activityBar": {
+    "size": 26
+  },
+  // "apc.stylesheet": {
+  //   // ".editor-actions": "margin: auto 140px auto 0;background: #ffffff0f; height: 26px !important; border-radius: 4px; padding: 0 0 0 4px !important",
+  //   "div.tab[aria-selected='true'] > .tab-border-top-container": "display: block !important; height: 2.5px; width: 100%; position: absolute; left: 0; background: linear-gradient(to right, #06f, #0af); box-shadow: 0 2px 10px #08f; z-index: 10",
+  //   ".tabs-border-bottom::after": "background: transparent !important",
+  //   ".monaco-workbench .part.statusbar>.items-container>.statusbar-item.remote-kind": "background: transparent; color: #a7b0f3",
+  //   ".inline-title-bar:not(.horizontal-activitybar) .monaco-workbench:not(.fullscreen) .activitybar:not(.right) .content": "height: 100% !important; transform: none !important",
+  //   ".inline-title-bar:not(.horizontal-activitybar) .monaco-workbench div.activitybar.bordered.left .content": "border-right: 1px solid #0003 !important",
+  //   ".monaco-workbench .activitybar > .content :not(.monaco-menu) > .monaco-action-bar .action-item.checked .active-item-indicator:before": "border: none !important; width: 2.5px; background: linear-gradient(to top, #06f, #0af); box-shadow: 5px 0 15px #08f",
+  //   ".custom-activitybar:not(.horizontal-activitybar) div.monaco-workbench div.activitybar>div.content div.monaco-action-bar ul.actions-container li.action-item": "margin-top: 0 !important",
+  //   // moonlight theme text glow, uncomment to add shadow on more tokens text.
+  //   // ".mtk1": "text-shadow: 0 0 8px #fff, 0 0 2px black;",
+  //   // ".mtk3": "text-shadow: 0 0 8px #555, 0 0 2px black;",
+  //   // ".mtk4": "text-shadow: 0 0 8px #df0c, 0 0 3px black;",
+  //   // ".mtk8": "text-shadow: 0 0 8px #a8f, 0 0 3px black;",
+  //   // ".mtk9": "text-shadow: 0 0 8px #6cf, 0 0 3px black;",
+  //   // ".mtk10": "text-shadow: 0 0 8px #f66, 0 0 3px black;",
+  //   // ".mtk11": "text-shadow: 0 0 8px #2f36ff, 0 0 5px #9d91ff80, 0 0 3px black;",
+  //   // ".mtk12": "text-shadow: 0 0 8px #12baff, 0 0 3px black;",
+  //   // ".mtk13": "text-shadow: 0 0 8px #ff6080, 0 0 3px black;",
+  //   // ".mtk14": "text-shadow: 0 0 8px #f85, 0 0 3px black;",
+  //   // ".mtk16": "text-shadow: 0 0 8px #6f0, 0 0 3px black;",
+  //   // ".mtk18": "text-shadow: 0 0 8px #879, 0 0 2px black;",
+  //   // ".mtk22": "text-shadow: 0 0 8px #fff, 0 0 2px black;",
+  // },
   "editor.minimap.renderCharacters": false,
   "workbench.tree.indent": 15,
   "editor.bracketPairColorization.enabled": true,
-  "workbench.tree.renderIndentGuides": "always",
+  "workbench.editor.tabSizing": "fixed",
+  "workbench.editor.tabSizingFixedMaxWidth": 200,
+  "vim.handleKeys": {
+    "<C-a>": false,
+    "<C-d>": true,
+    "<C-b>": false,
+    "<C-j>": false,
+    "<C-k>": false,
+    "<C-space>": false,
+    "<C-q>": false,
+    "<C-m>": false,
+    "<C-n>": false,
+    "<C-v>": true,
+    "<C-c>": true,
+    "<C-p>": false,
+    "<C-w>": true,
+  },
+  "workbench.editor.closeEmptyGroups": true,
   "editor.guides.indentation": true,
   "editor.guides.highlightActiveIndentation": true,
-  "editor.guides.highlightActiveBracketPair": true,
-  "accessibility.dimUnfocused.enabled": true,
-  "accessibility.verbosity.comments": true,
-  "application.experimental.rendererProfiling": true,
-  "workbench.view.alwaysShowHeaderActions": true,
-  "workbench.list.smoothScrolling": true,
-  "editor.smoothScrolling": true,
-  "terminal.integrated.smoothScrolling": true,
-  "apc.imports": [
-    "file:///var/home/me/Schreibtisch/vsc.css"
-  ],
-  "extensions.experimental.affinity": {
-    "asvetliakov.vscode-neovim": 1
-  },
-  "vscode-neovim.compositeKeys": {
-    "jk": {
-      "command": "vscode-neovim.lua",
-      "args": [
-        "vim.api.nvim_input('<ESC>') require('vscode').action('workbench.action.files.save')"
-      ]
-    }
-  },
-  "workbench.colorTheme": "MacOS Modern Dark - Ventura Xcode Default",
-  "workbench.colorCustomizations": {
-    "menu.background": "#2e333b70", //context menu
-    "menu.selectionBackground": "#4247509a", //context menu hover
-    "editorWidget.background": "#51586320", //widget and tooltip
-    "quickInput.background": "#2e333b00", //command center drop down menu
-    "notifications.background": "#29303bd7", //Notification background color.
-  },
-  
-
-  "editor.gotoLocation.multipleReferences": "goto",
-  "editor.gotoLocation.multipleDeclarations": "goto",
   "go.inlayHints.assignVariableTypes": true,
   "go.inlayHints.compositeLiteralFields": true,
   "go.inlayHints.compositeLiteralTypes": true,
   "go.inlayHints.constantValues": true,
   "go.inlayHints.functionTypeParameters": true,
   "go.inlayHints.parameterNames": true,
-  "go.inlayHints.rangeVariableTypes": true,
-  "editor.inlayHints.enabled": "onUnlessPressed",
-  "workbench.statusBar.visible": false,
-  "workbench.activityBar.location": "hidden",
-  "editor.wrappingIndent": "same",
-  "editor.wrappingStrategy": "advanced",
-  "editor.wordWrapColumn": 50,
+  // "go.inlayHints.rangeVariableTypes": true,
+  "workbench.tree.renderIndentGuides": "always",
+  "editor.guides.bracketPairs": "active",
+  "editor.guides.bracketPairsHorizontal": "active",
+  "editor.guides.highlightActiveBracketPair": true,
+  "telemetry.telemetryLevel": "off",
+  "update.mode": "none",
+  "editor.linkedEditing": true,
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": "explicit"
+  },
+  "emmet.excludeLanguages": [],
+  "emmet.includeLanguages": {
+    "markdown": "html"
+  },
+  "files.trimTrailingWhitespace": true,
+  "go.coverageDecorator": {
+    "type": "highlight",
+    // "coveredHighlightColor": "rgba(64,128,128,0.5)",
+    // "uncoveredHighlightColor": "rgba(128,64,64,0.25)",
+    // "coveredBorderColor": "rgba(64,128,128,0.5)",
+    // "uncoveredBorderColor": "rgba(128,64,64,0.25)",
+    // "coveredGutterStyle": "blockblue",
+    // "uncoveredGutterStyle": "slashyellow"
+  },
+  "go.coverMode": "default",
+  "go.coverOnSave": false,
+  "go.coverShowCounts": true,
+  "editor.lineNumbers": "relative",
+  "window.menuBarVisibility": "hidden",
+  "editor.fontSize": 16,
+  "workbench.activityBar.location": "top",
+  "workbench.editor.showTabs": "none",
+  "editor.wordWrap": "on",
+  "editor.scrollbar.horizontalScrollbarSize": 6,
+  "editor.scrollbar.verticalScrollbarSize": 2,
+  "gopls": {
+    "ui.semanticTokens": true,
+    "ui.completion.completeFunctionCalls": true,
+    "ui.completion.experimentalPostfixCompletions": true,
+    "ui.completion.usePlaceholders": false,
+    // "ui.diagnostic.annotations": {},
+    "ui.documentation.hoverKind": "SynopsisDocumentation",
+    "ui.documentation.linksInHover": true,
+    "ui.navigation.symbolStyle": "Dynamic",
+  },
+  "editor.semanticTokenColorCustomizations": {
+    "[*]": {
+      "enabled": true
+    }
+  },
+  "editor.semanticHighlighting.enabled": true,
+  "workbench.colorTheme": "Noir Essence Dark Border",
+  "workbench.editor.editorActionsLocation": "hidden",
+  "colorIdentifiersMode.method": "hash",
+  "colorIdentifiersMode.paletteMode": "manual",
+  "colorIdentifiersMode.manualColors": [
+    "#e81416 ",
+    "#ffa500 ",
+    "#faeb36 ",
+    "#79c314 ",
+    "#487de7 ",
+    "#4b369d ",
+    "#70369d ",
+    "#00ffff",
+    "#ff00ff",
+    "#ff69b4",
+    " #00ff00",
+    "#673ab7",
+  ],
+  "colorIdentifiersMode.tokenKinds": [
+    "variable",
+    "parameter",
+    "property",
+    "class",
+    "interface",
+    "enum",
+    "function",
+    "import",
+    "namespace",
+    "method"
+  ],
+  "vim.useSystemClipboard": true,
+  "terminal.integrated.defaultProfile.linux": "nu",
+  "terminal.integrated.profiles.linux": {
+    "bash": {
+      "path": "bash",
+      "icon": "terminal-bash"
+    },
+    "zsh": {
+      "path": "zsh"
+    },
+    "fish": {
+      "path": "fish"
+    },
+    "tmux": {
+      "path": "tmux",
+      "icon": "terminal-tmux"
+    },
+    "pwsh": {
+      "path": "pwsh",
+      "icon": "terminal-powershell"
+    },
+    "nu": {
+      "path": "/bin/nu"
+    }
+  },
+  "debug.internalConsoleOptions": "neverOpen",
+  "debug.openDebug": "neverOpen",
+  "window.newWindowProfile": "Default"
 }
