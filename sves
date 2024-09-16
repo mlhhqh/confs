@@ -1,135 +1,19 @@
-.pane-composite-part > .composite > .title-actions {
-    display: none !important;
+/* .inline-title-bar:not(.activitybar-top):not(.statusbar-top) .monaco-workbench:not(.fullscreen) .sidebar .composite.title .title-label {
+    display: none;
+} */
+
+.composite-bar {
+    width: 100%;
 }
 
-.pane-composite-part > .composite > .title-label {
-    display: none !important;
-}
-
-.pane-composite-part > .title {
-    display: none !important;
-}
-
-.sidebar {
-    height: 100% !important;
-}
-
-.monaco-editor .suggest-widget {
-    backdrop-filter: blur(16px);
-
-    /* background-color: rgba(255, 255, 255, 0.33) !important; */
-    background-color: rgba(28, 28, 30, 0.88) !important;
-    /* A very dark grey with slight transparency */
-    border: 1px solid rgba(255, 255, 255, 0.2) !important;
-    /* border: 1px solid rgba(0, 0, 0, 0.44) !important; */
-    /* A light grey border with low opacity */
-    border-radius: 8px !important;
-    /* A slight rounding of the edges */
-    box-shadow: rgba(0, 0, 0, 0.9) 0 0 50px !important;
-
-    /* A soft, diffuse shadow */
-
-
-    /* background-color: rgba(0, 0, 0, 0.44) !important;
-    box-shadow: rgba(100,100,100,0.88) 0 0 30px !important;
-    border: 1.5px solid rgba(255,255,255,0.33) !important;
-    border-radius: 15px !important; */
-    padding: 5px;
-    /* box-shadow: rgba(0, 0, 0, 0.88) 0 0 30px !important; */
-    /* border: 1px solid rgba(0, 0, 0, 1) !important; */
-    outline: none !important;
-    overflow: hidden !important;
-
-    box-shadow: rgba(0, 0, 0, 0.9) 0 0 100px !important;
-}
-
-.suggest-details {
-    backdrop-filter: blur(16px);
-    /* background-color: rgba(0, 0, 0, 0.44) !important;
-    box-shadow: rgba(100,100,100,0.88) 0 0 30px !important;
-    border: 1.5px solid rgba(255,255,255,0.33) !important;
-    border-radius: 15px !important; */
-    backdrop-filter: blur(16px);
-    /* background-color: rgba(255, 255, 255, 0.33) !important; */
-    /* background-color: rgba(255, 255, 255, 0.33) !important; */
-    background-color: rgba(28, 28, 30, 0.88) !important;
-    border: 1px solid rgba(255, 255, 255, 0.2) !important;
-    /* A light grey border with low opacity */
-    border-radius: 8px !important;
-    /* A slight rounding of the edges */
-    box-shadow: rgba(0, 0, 0, 0.9) 0 0 100px !important;
-    /* A soft, diffuse shadow */
-    /* A soft, diffuse shadow */
-
-    padding: 5px;
-    outline: none !important;
-    overflow: hidden !important;
-    margin-left: 15px !important;
-}
-
-.monaco-editor .suggest-details {
-    backdrop-filter: blur(16px);
-    /* background-color: rgba(255, 255, 255, 0.33) !important; */
-    background-color: rgba(28, 28, 30, 0.88) !important;
-    border: 1px solid rgba(255, 255, 255, 0.2) !important;
-    /* A light grey border with low opacity */
-    border-radius: 8px !important;
-    /* A slight rounding of the edges */
-    box-shadow: rgba(0, 0, 0, 0.6) 0 0 20px !important;
-    padding: 5px;
-    /* background-color: rgba(0, 0, 0, 0.44) !important;
-    box-shadow: rgba(100,100,100,0.88) 0 0 30px !important;
-    border: 1.5px solid rgba(255,255,255,0.33) !important; */
-    outline: none !important;
-    overflow: hidden !important;
-}
-
-.monaco-list-row {
-    border-radius: 7.5px;
-    border-radius: 25px !important;
-    overflow: hidden !important;
-}
-
-.monaco-hover {
-    backdrop-filter: blur(16px);
-    /* background-color: rgba(255, 255, 255, 0.33) !important; */
-    background-color: rgba(28, 28, 30, 0.88) !important;
-    border: 1px solid rgba(255, 255, 255, 0.2) !important;
-    /* A light grey border with low opacity */
-    border-radius: 8px !important;
-    /* A slight rounding of the edges */
-    box-shadow: rgba(0, 0, 0, 0.6) 0 0 20px !important;
-    /* border-radius: 15px !important; */
-    padding: 5px;
-    /* background-color: rgba(0, 0, 0, 0.44) !important; */
-    /* box-shadow: rgba(100,100,100,0.88) 0 0 30px !important; */
-    /* border: 1.5px solid rgba(255,255,255,0.33) !important; */
-    outline: none !important;
-    overflow: hidden !important;
-}
-
-.parameter-hints-widget {
-    backdrop-filter: blur(16px);
-    /* background-color: rgba(255, 255, 255, 0.33) !important; */
-    background-color: rgba(28, 28, 30, 0.88) !important;
-    border: 1px solid rgba(255, 255, 255, 0.2) !important;
-    /* A light grey border with low opacity */
-    border-radius: 8px !important;
-    /* A slight rounding of the edges */
-    box-shadow: rgba(0, 0, 0, 0.6) 0 0 20px !important;
-    /* border-radius: 15px !important; */
-    padding: 5px;
-    /* background-color: rgba(0, 0, 0, 0.44) !important; */
-    /* box-shadow: rgba(100,100,100,0.88) 0 0 30px !important; */
-    /* border: 1.5px solid rgba(255,255,255,0.33) !important; */
-    outline: none !important;
-    overflow: hidden !important;
-}
+/* .editor-actions {
+    display: none;
+} */
 
 .quick-input-widget {
-    backdrop-filter: blur(16px);
+    /* backdrop-filter: blur(16px); */
     /* background-color: rgba(255, 255, 255, 0.33) !important; */
-    background-color: rgba(28, 28, 30, 0.88) !important;
+    /* background-color: rgba(28, 28, 30, 0.88) !important; */
     border: 1px solid rgba(255, 255, 255, 0.2) !important;
     /* A light grey border with low opacity */
     border-radius: 8px !important;
@@ -145,43 +29,73 @@
     overflow: hidden !important;
 }
 
-.quick-input-list>.monaco-list>.monaco-scrollable-element>.monaco-list-rows>.monaco-list-row {
-    /* color: black; */
-}
 
-.title-label>h2 {
-    display: none;
-}
-
-.quick-input-widget>.quick-input-titlebar {
+/* .quick-input-widget>.quick-input-titlebar {
     display: none
-}
+} */
 
 .quick-input-widget>.quick-input-list>.monaco-list {
     max-height: 41vh !important;
 }
 
-.quick-input-widget>.quick-input-list .monaco-list-row[aria-label*=\"+\"] .label-description {
-    color: #8ec07c !important;
-}
-
-.quick-input-list>.monaco-list>.monaco-scrollable-element>.monaco-list-rows>.monaco-list-row {
+/* .quick-input-list>.monaco-list>.monaco-scrollable-element>.monaco-list-rows>.monaco-list-row {
     font-size: 16px;
-}
+} */
 
+.composite.title.has-composite-bar {
+    padding-left: 1px !important;
+}
 .composite.has-composite-bar.header-or-footer.header {
     padding-left: 0;
     justify-content: center;
 }
 
-.composite.has-composite-bar.header-or-footer.header > .composite-bar-container > .composite-bar > .monaco-action-bar > .actions-container, .composite-bar-container {
+.composite.has-composite-bar.header-or-footer.header>.composite-bar-container>.composite-bar>.monaco-action-bar>.actions-container,
+.composite-bar-container {
     display: flex;
     justify-content: space-around;
 }
 
-/* ".title-label > h2": "display:none;",
-    ".quick-input-widget": "border: solid rgba(255,255,255,0.22) !important; border-width: 0.5px !important; margin-top: 15%;",
-    ".quick-input-widget > .quick-input-titlebar": "display: none",
-    ".quick-input-widget > .quick-input-list > .monaco-list": "max-height: 41vh !important;",
-    ".quick-input-widget > .quick-input-list .monaco-list-row[aria-label*=\" +\"] .label-description": "color: #8ec07c; font-size: 18px;",
-    ".quick-input-list > .monaco-list > .monaco-scrollable-element > .monaco-list-rows > .monaco-list-row": "color: black; font-size: 16px;" */
+
+.monaco-editor .suggest-details {
+    margin-left: 15px !important;
+    margin-right: 15px !important;
+    margin-bottom: 15px !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    border-radius: 8px !important;
+    box-shadow: rgba(0, 0, 0, 0.6) 0 0 20px !important;
+    padding: 5px;
+    outline: none !important;
+    overflow: hidden !important;
+}
+
+.monaco-editor .suggest-widget {
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    border-radius: 8px !important;
+    box-shadow: rgba(0, 0, 0, 0.9) 0 0 50px !important;
+    padding: 5px;
+    outline: none !important;
+    overflow: hidden !important;
+
+}
+
+.monaco-hover {
+    /* backdrop-filter: blur(16px);
+    background-color: rgba(28, 28, 30, 0.88) !important; */
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    border-radius: 8px !important;
+    box-shadow: rgba(0, 0, 0, 0.6) 0 0 20px !important;
+    padding: 5px;
+    outline: none !important;
+    overflow: hidden !important;
+}
+
+.parameter-hints-widget {
+    background-color:#111314  !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    border-radius: 8px !important;
+    box-shadow: rgba(0, 0, 0, 0.6) 0 0 20px !important;
+    padding: 5px;
+    outline: none !important;
+    overflow: hidden !important;
+}
