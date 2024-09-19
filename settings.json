@@ -1,5 +1,5 @@
 {
-  "window.titleBarStyle": "native",
+  // "window.titleBarStyle": "native",
   "continue.enableTabAutocomplete": false,
   "apc.imports": [
     // "file:///var/home/me/Schreibtisch/vsc.css"
@@ -21,6 +21,12 @@
   "editor.inlayHints.fontSize": 12, // <-- Set the font-size you want
   // "window.titleBarStyle": "custom",
   "workbench.colorCustomizations": {
+    // "editor.background": "#161616",
+    // "editor.background": "#000000",
+    // "editorGutter.background": "#161616",
+    // "editorGutter.background": "#000000",
+    // "statusBar.background": "#111314",
+    // "statusBar.border": "#ffffff15",
     "editorGroup.border": "#0000ff32",
     "editorInlayHint.background": "#00000000",
     "editorInlayHint.foreground": "#96969676"
@@ -30,8 +36,8 @@
     //   "editorGroupHeader.tabsBackground": "#181818",
     //   "editorGroupHeader.border": "#292929",
   },
-  "breadcrumbs.enabled": false,
-  "editor.minimap.enabled": false,
+  "breadcrumbs.enabled": true,
+  "editor.minimap.enabled": true,
   "workbench.layoutControl.enabled": false,
   "editor.smoothScrolling": true,
   "editor.cursorSmoothCaretAnimation": "on",
@@ -39,13 +45,12 @@
   "terminal.integrated.smoothScrolling": true,
   "vim.smartRelativeLine": false,
   // following 5 properties remove gutter elements, comment/uncomment as per your liking
-  "editor.folding": true, // removes code folding arrows
   // "editor.glyphMargin": false, // removes space for symbols like breakpoint, bookmark, hints icons, etc
   "editor.roundedSelection": true,
   "editor.cursorBlinking": "phase",
   "editor.cursorStyle": "block",
   "editor.fontLigatures": true,
-  "editor.lineHeight": 1.6,
+  // "editor.lineHeight": 1.6,
   // settings for APC customize UI++ extension
   // "apc.electron": {
   //   // "titleBarStyle": "customButtonsOnHover",
@@ -59,15 +64,15 @@
   "apc.statusBar": {
     "position": "editor-bottom",
   },
-  "apc.sidebar.titlebar": {
-    "height": 36
-  },
+  // "apc.sidebar.titlebar": {
+  //   "height": 36
+  // },
   "apc.listRow": {
     "height": 25
   },
-  "apc.activityBar": {
-    "size": 26
-  },
+  // "apc.activityBar": {
+  //   "size": 26
+  // },
   // "apc.stylesheet": {
   //   // ".editor-actions": "margin: auto 140px auto 0;background: #ffffff0f; height: 26px !important; border-radius: 4px; padding: 0 0 0 4px !important",
   //   "div.tab[aria-selected='true'] > .tab-border-top-container": "display: block !important; height: 2.5px; width: 100%; position: absolute; left: 0; background: linear-gradient(to right, #06f, #0af); box-shadow: 0 2px 10px #08f; z-index: 10",
@@ -151,7 +156,6 @@
   "go.coverShowCounts": true,
   "editor.lineNumbers": "relative",
   "window.menuBarVisibility": "hidden",
-  "editor.fontSize": 16,
   "workbench.activityBar.location": "top",
   "workbench.editor.showTabs": "none",
   "editor.wordWrap": "on",
@@ -173,29 +177,45 @@
     }
   },
   "editor.semanticHighlighting.enabled": true,
-  "workbench.colorTheme": "Noir Essence Dark Border",
   "workbench.editor.editorActionsLocation": "hidden",
-  "colorIdentifiersMode.method": "hash",
-  "colorIdentifiersMode.paletteMode": "manual",
+  "colorIdentifiersMode.method": "sequential",
+  "colorIdentifiersMode.paletteMode": "automatic",
   "colorIdentifiersMode.manualColors": [
-    "#e81416 ",
-    "#ffa500 ",
-    "#faeb36 ",
-    "#79c314 ",
-    "#487de7 ",
-    "#4b369d ",
-    "#70369d ",
-    "#00ffff",
-    "#ff00ff",
-    "#ff69b4",
-    " #00ff00",
-    "#673ab7",
+"#e81416",
+"#ffa500",
+"#faeb36",
+"#79c314",
+"#487de7",
+"#4b369d",
+"#70369d",
+"#00ffff",
+"#ff00ff",
+"#ff69b4",
+"#00ff00",
+"#673ab7",
+"#ff6347",
+"#3cb371",
+"#ff4500",
+"#1e90ff",
+"#32cd32",
+"#ff1493",
+"#8a2be2",
+"#ff8c00",
+"#adff2f",
+"#c71585",
+"#ffb6c1",
+"#20b2aa",
+"#d2691e",
+"#8b4513",
+"#778899",
+"#b22222",
+"#deb887",
+"#dcdcdc"
   ],
   "colorIdentifiersMode.tokenKinds": [
     "variable",
     "parameter",
     "property",
-    "class",
     "interface",
     "enum",
     "function",
@@ -230,5 +250,49 @@
   },
   "debug.internalConsoleOptions": "neverOpen",
   "debug.openDebug": "neverOpen",
-  "window.newWindowProfile": "Default"
+  "window.newWindowProfile": "Default",
+  // Titlebar
+  "window.titleBarStyle": "native",
+  "apc.menubar.compact": false,
+  "apc.electron": {
+    "frame": false,
+    "titleBarStyle": "hiddenInset"
+  },
+  // "apc.header": {
+  //   "height": 36
+  // },
+  // "apc.sidebar.titlebar": {
+  //   "height": 36
+  // },
+  "apc.activityBar": {
+    "size": 40, // 26
+    // "itemSize": 40,
+    "itemMargin": 0
+  },
+  // "apc.stylesheet": {
+  //   ".title-label": "display: none !important",
+  //   ".composite.title": "display: block !important",
+  //   ".monaco-workbench .part.sidebar .title-actions .actions-container": "justify-content: space-evenly !important"
+  // },
+  "editor.scrollbar.vertical": "hidden",
+  // "editor.fontFamily": "Intel One Mono",
+  "editor.fontFamily": "Berkeley Mono",
+  "editor.fontSize": 19,
+  "editor.letterSpacing": 0.25,
+  "workbench.statusBar.visible": true,
+  "window.customTitleBarVisibility": "never",
+  "workbench.colorTheme": "Viow Arabian",
+  "window.zoomLevel": 0,
+  "editor.mouseWheelZoom": false,
+  "editor.folding": true, // removes code folding arrows
+  "editor.foldingImportsByDefault": true,
+  "editor.foldingHighlight": true,
+  "editor.showFoldingControls": "mouseover",
+  "betterFolding.foldClosingBrackets": true,
+  "betterFolding.showFoldedBodyLinesCount": true,
+  "betterFolding.showFoldedBrackets": true,
+  "betterFolding.showFunctionParameters": true,
+  "vim.foldfix": true,
+  "workbench.iconTheme": "eq-material-theme-icons",
+  "powermode.enabled": false,
 }
