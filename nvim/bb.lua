@@ -17,6 +17,16 @@ end
 bootstrap_pckr()
 
 require('pckr').add {
+{"folke/tokyonight.nvim"},
+{"sindrets/diffview.nvim"},
+{"NeogitOrg/neogit"},
+{"rachartier/tiny-inline-diagnostic.nvim"},
+{"rgroli/other.nvim"},
+{"lewis6991/gitsigns.nvim"},
+{"chentoast/marks.nvim"},
+	{ "nvim-lua/plenary.nvim" },
+	{ "Wansmer/treesj" },
+	{ "ThePrimeagen/refactoring.nvim" },
 	{ "marko-cerovac/material.nvim" },
 	{ "navarasu/onedark.nvim" },
 	{ "xiantang/darcula-dark.nvim" },
@@ -341,6 +351,53 @@ vim.cmd([[  hi default link DapUIVariable Normal
 
 --require("dapui.config").setup({})
 --vim.o.background = "light"
-require("zen-mode").toggle({})
+-- require("zen-mode").toggle({})
 
 vim.keymap.set('t', 'jk', [[<C-\><C-n>]]) -- no need to escape the '\'
+vim.keymap.set("n", "gd", vim.lsp.buf.definition)
+vim.keymap.set("n", "gi", vim.lsp.buf.implementation)
+vim.keymap.set("n", "gr", vim.lsp.buf.references)
+
+-- set leader to space
+vim.g.mapleader = " "
+
+vim.keymap.set('n', '<F5>', function() require('dap').continue() end)
+vim.keymap.set('n', '<F10>', function() require('dap').step_over() end)
+vim.keymap.set('n', '<F11>', function() require('dap').step_into() end)
+vim.keymap.set('n', '<F12>', function() require('dap').step_out() end)
+vim.keymap.set('n', '<Leader>b', function() require('dap').toggle_breakpoint() end)
+vim.keymap.set('n', '<Leader>B', function() require('dap').set_breakpoint() end)
+vim.keymap.set('n', '<Leader>lp',
+	function() require('dap').set_breakpoint(nil, nil, vim.fn.input('Log point message: ')) end)
+vim.keymap.set('n', '<Leader>dr', function() require('dap').repl.open() end)
+vim.keymap.set('n', '<Leader>dl', function() require('dap').run_last() end)
+vim.keymap.set({ 'n', 'v' }, '<Leader>dh', function()
+	require('dap.ui.widgets').hover()
+end)
+vim.keymap.set({ 'n', 'v' }, '<Leader>dp', function()
+	require('dap.ui.widgets').preview()
+end)
+vim.keymap.set('n', '<Leader>df', function()
+	local widgets = require('dap.ui.widgets')
+	widgets.centered_float(widgets.frames)
+end)
+vim.keymap.set('n', '<Leader>ds', function()
+	local widgets = require('dap.ui.widgets')
+	widgets.centered_float(widgets.scopes)
+end)
+
+local tsj = require('treesj')
+tsj.setup({})
+
+require('refactoring').setup({
+	prompt_func_return_type = {
+		go = true,
+	},
+	prompt_func_param_type = {
+		go = true,
+	},
+	printf_statements = {},
+	print_var_statements = {},
+	show_success_message = true, -- shows a message with information about the refactor on success
+	-- i.e. [Refactor] Inlined 3 variable occurrences
+})
