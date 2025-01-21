@@ -6,7 +6,7 @@
 (package-initialize)
 
 (defvar my-packages
-  '(evil vertico marginalia corfu corfu-candidate-overlay hotfuzz doom-modeline doom-themes mood-one-theme magit markdown-mode transient which-key ace-window rainbow-delimiters treemacs hl-todo highlight-indentation consult ace-window evil-escape corfu evil-goggles dape llama-cpp evil-collection git-gutter git-gutter-fringe magit-delta gptel plz))
+  '(evil vertico marginalia corfu corfu-candidate-overlay hotfuzz doom-modeline doom-themes mood-one-theme magit markdown-mode transient which-key ace-window rainbow-delimiters treemacs hl-todo highlight-indentation consult ace-window evil-escape corfu evil-goggles dape llama-cpp evil-collection git-gutter git-gutter-fringe magit-delta gptel plz highlight-indent-guides ace-window avy which-key restart-emacs ))
 
 (dolist (pkg my-packages)
   (unless (package-installed-p pkg)
@@ -15,9 +15,6 @@
 (tool-bar-mode -1)
 (menu-bar-mode -1)
 (scroll-bar-mode -1)
-(global-display-line-numbers-mode 1)
-(setq display-line-numbers 'relative)
-(setq word-wrap t) ;; visual-line-mode
 
 (vertico-mode 1)
 (marginalia-mode 1)
@@ -89,13 +86,30 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
-   '("11819dd7a24f40a766c0b632d11f60aaf520cf96bd6d8f35bae3399880937970" "d35afe834d1f808c2d5dc7137427832ccf99ad2d3d65d65f35cc5688404fdf30" "0325a6b5eea7e5febae709dab35ec8648908af12cf2d2b569bedc8da0a3a81c1" default))
+   '("a68ec832444ed19b83703c829e60222c9cfad7186b7aea5fd794b79be54146e6"
+     "e9d685df93947908816c34446af008825c0ebe2f140d6df068d2d77dcd6b1c0c"
+     "11819dd7a24f40a766c0b632d11f60aaf520cf96bd6d8f35bae3399880937970"
+     "d35afe834d1f808c2d5dc7137427832ccf99ad2d3d65d65f35cc5688404fdf30"
+     "0325a6b5eea7e5febae709dab35ec8648908af12cf2d2b569bedc8da0a3a81c1"
+     default))
+ '(eldoc-idle-delay 0.25)
+ '(highlight-indent-guides-character 124)
+ '(highlight-indent-guides-method 'character)
+ '(indent-bars-treesit-scope '((go)))
  '(inhibit-startup-screen t)
  '(package-selected-packages
-   '(kind-icon git-gutter git-gutter-fringe magit-delta vscode-dark-plus-theme evil-escape which-key vertico uwu-theme treemacs rainbow-delimiters mood-one-theme markdown-mode marginalia magit llama-cpp hotfuzz hl-todo highlight-indentation evil-goggles evil-collection dracula-theme doom-themes doom-modeline dape corfu-candidate-overlay consult-eglot adwaita-dark-theme plz))
+   '(adwaita-dark-theme auto-dark consult-eglot corfu-candidate-overlay
+			dape doom-modeline doom-themes dracula-theme
+			evil-collection evil-escape evil-goggles
+			git-gutter git-gutter-fringe
+			highlight-indentation hl-todo hotfuzz
+			indent-bars kind-icon llama-cpp magit
+			magit-delta marginalia markdown-mode
+			mood-one-theme nerd-icons-corfu plz
+			rainbow-delimiters treemacs uwu-theme vertico
+			vscode-dark-plus-theme which-key))
  '(treesit-font-lock-level 4))
 
-(global-visual-line-mode t)
 
 (use-package git-gutter
   :hook (prog-mode . git-gutter-mode)
@@ -171,13 +185,20 @@
 ;; set completion to hotfuzz
 (setq completion-styles '(hotfuzz))
 
+(require 'corfu)
 (add-to-list 'corfu-margin-formatters #'nerd-icons-corfu-formatter)
 
-(use-package kind-icon
-  :ensure t
-  :after corfu
-  ;:custom
-  ; (kind-icon-blend-background t)
-  ; (kind-icon-default-face 'corfu-default) ; only needed with blend-background
-  :config
-  (add-to-list 'corfu-margin-formatters #'kind-icon-margin-formatter))
+;; (use-package kind-icon
+;;   :ensure t
+;;   :after corfu
+;;   ;:custom
+;;   ; (kind-icon-blend-background t)
+;;   ; (kind-icon-default-face 'corfu-default) ; only needed with blend-background
+;;   :config
+;;   (add-to-list 'corfu-margin-formatters #'kind-icon-margin-formatter))
+
+(global-display-line-numbers-mode 1)
+(setq display-line-numbers 'relative)
+(setq display-line-numbers-type 'relative)
+;; (global-visual-line-mode t)
+;; (setq word-wrap t) ;; visual-line-mode
