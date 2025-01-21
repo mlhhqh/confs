@@ -6,7 +6,7 @@
 (package-initialize)
 
 (defvar my-packages
-  '(evil vertico marginalia corfu corfu-candidate-overlay hotfuzz doom-modeline doom-themes mood-one-theme magit markdown-mode transient which-key ace-window rainbow-delimiters treemacs hl-todo highlight-indentation consult ace-window evil-escape corfu evil-goggles dape llama-cpp evil-collection))  ;; replace with your list of packages
+  '(evil vertico marginalia corfu corfu-candidate-overlay hotfuzz doom-modeline doom-themes mood-one-theme magit markdown-mode transient which-key ace-window rainbow-delimiters treemacs hl-todo highlight-indentation consult ace-window evil-escape corfu evil-goggles dape llama-cpp evil-collection git-gutter git-gutter-fringe magit-delta gptel plz))
 
 (dolist (pkg my-packages)
   (unless (package-installed-p pkg)
@@ -15,8 +15,9 @@
 (tool-bar-mode -1)
 (menu-bar-mode -1)
 (scroll-bar-mode -1)
+(global-display-line-numbers-mode 1)
 (setq display-line-numbers 'relative)
-(setq word-wrap t)
+(setq word-wrap t) ;; visual-line-mode
 
 (vertico-mode 1)
 (marginalia-mode 1)
@@ -32,8 +33,8 @@
 (setq evil-escape-key-sequence "jk")
 (delete 'visual evil-escape-excluded-states)
 
-(setq corfu-auto t
-      corfu-quit-no-match 'separator) ;; or t
+;; (setq corfu-auto t
+;;       corfu-quit-no-match 'separator) ;; or t
 
 (use-package evil-goggles
   :ensure t
@@ -91,7 +92,92 @@
    '("11819dd7a24f40a766c0b632d11f60aaf520cf96bd6d8f35bae3399880937970" "d35afe834d1f808c2d5dc7137427832ccf99ad2d3d65d65f35cc5688404fdf30" "0325a6b5eea7e5febae709dab35ec8648908af12cf2d2b569bedc8da0a3a81c1" default))
  '(inhibit-startup-screen t)
  '(package-selected-packages
-   '(vscode-dark-plus-theme evil-escape which-key vertico uwu-theme treemacs rainbow-delimiters mood-one-theme markdown-mode marginalia magit llama-cpp hotfuzz hl-todo highlight-indentation evil-goggles evil-collection dracula-theme doom-themes doom-modeline dape corfu-candidate-overlay consult-eglot adwaita-dark-theme))
+   '(kind-icon git-gutter git-gutter-fringe magit-delta vscode-dark-plus-theme evil-escape which-key vertico uwu-theme treemacs rainbow-delimiters mood-one-theme markdown-mode marginalia magit llama-cpp hotfuzz hl-todo highlight-indentation evil-goggles evil-collection dracula-theme doom-themes doom-modeline dape corfu-candidate-overlay consult-eglot adwaita-dark-theme plz))
  '(treesit-font-lock-level 4))
 
 (global-visual-line-mode t)
+
+(use-package git-gutter
+  :hook (prog-mode . git-gutter-mode)
+  :config
+  (setq git-gutter:update-interval 0.02))
+
+(use-package git-gutter-fringe
+  :config
+  (define-fringe-bitmap 'git-gutter-fr:added [224] nil nil '(center repeated))
+  (define-fringe-bitmap 'git-gutter-fr:modified [224] nil nil '(center repeated))
+  (define-fringe-bitmap 'git-gutter-fr:deleted [128 192 224 240] nil nil 'bottom))
+
+(use-package magit-delta
+  :after magit
+  :config
+  :hook (magit-mode . magit-delta-mode))
+  (setq
+    magit-delta-default-dark-theme "TwoDark"
+    magit-delta-default-light-theme "Github"
+    magit-delta-hide-plus-minus-markers nil)
+  ;;(magit-delta-mode)
+
+ (load-file "/var/home/dx/Schreibtisch/minuet-ai.el/minuet.el") 
+
+(use-package minuet
+    :config
+    (setq minuet-provider 'openai-fim-compatible)
+    (plist-put minuet-openai-fim-compatible-options :end-point "http://localhost:11434/v1/completions")
+    ;; an arbitrary non-null environment variable as placeholder
+    (plist-put minuet-openai-fim-compatible-options :name "Ollama")
+    (plist-put minuet-openai-fim-compatible-options :api-key "TERM")
+    (plist-put minuet-openai-fim-compatible-options :model "qwen2.5-coder:1.5b-base")
+
+    (minuet-set-optional-options minuet-openai-fim-compatible-options :max_tokens 256))
+
+;; Llama.cpp offers an OpenAI compatible API
+(gptel-make-openai "llama-cpp"          ;Any name
+  :stream t                             ;Stream responses
+  :protocol "http"
+  :host "localhost:8081"                ;Llama.cpp server location
+  :models '(test))                    ;Any names, doesn't matter for Llama
+;; OPTIONAL configuration
+
+(setq
+ gptel-model   'test
+ gptel-backend (gptel-make-openai "llama-cpp"
+                 :stream t
+                 :protocol "http"
+                 :host "localhost:8081"
+                 :models '(test)))
+
+(defun setup-corfu ()
+  "Enable global-corfu-mode and corfu-popupinfo-mode."
+  (global-corfu-mode)
+  (corfu-popupinfo-mode))
+
+(setq corfu-auto        t
+      corfu-auto-delay  1  
+      corfu-auto-prefix 0.25) 
+      
+
+;; Write a function that does the following:
+;; 1. Enable global-corfu-mode
+;; 2. Enable corfu-popupinfo-mode
+
+(defun my-go-ts-mode-setup ()
+  (go-ts-mode)
+  (eglot-ensure))
+
+(add-to-list 'auto-mode-alist '("\\.go\\'" . my-go-ts-mode-setup))
+(add-hook 'go-ts-mode-hook 'setup-corfu)
+
+;; set completion to hotfuzz
+(setq completion-styles '(hotfuzz))
+
+(add-to-list 'corfu-margin-formatters #'nerd-icons-corfu-formatter)
+
+(use-package kind-icon
+  :ensure t
+  :after corfu
+  ;:custom
+  ; (kind-icon-blend-background t)
+  ; (kind-icon-default-face 'corfu-default) ; only needed with blend-background
+  :config
+  (add-to-list 'corfu-margin-formatters #'kind-icon-margin-formatter))
