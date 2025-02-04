@@ -1,0 +1,1 @@
+{"version":3,"file":"languageConfig.js","sourceRoot":"","sources":["../../src/bracket-pair-colorizer-2 src/languageConfig.ts"],"names":[],"mappings":";;AAEA,MAAqB,cAAc;IAKjC,YAAY,OAAiB,EAAE,KAAa,EAAE,WAAwD;QACpG,IAAI,CAAC,OAAO,GAAG,OAAO,CAAC;QACvB,IAAI,CAAC,KAAK,GAAG,KAAK,CAAC;QACnB,IAAI,CAAC,WAAW,GAAG,WAAW,CAAC;IACjC,CAAC;CACF;AAVD,iCAUC"}
