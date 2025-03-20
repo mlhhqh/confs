@@ -1,0 +1,135 @@
+// Place your key bindings in this file to override the defaults
+[
+    // toggle fold recursive
+    {
+        "key": "y shift-a",
+        "command": "editor.toggleFoldRecursively",
+        "when": "editorTextFocus && foldingEnabled && vim.mode=='Normal'"
+    },
+    // toggle fold
+    {
+        "key": "y a",
+        "command": "editor.toggleFold",
+        "when": "editorTextFocus && foldingEnabled && vim.mode=='Normal'"
+    },
+    // go to definition
+    {
+        "key": "g d",
+        "command": "editor.action.goToDeclaration",
+        "when": "editorTextFocus && vim.mode=='Normal'",
+    },
+    {
+        "key": "g p d",
+        "command": "editor.action.peekDefinition",
+        "when": "editorTextFocus && vim.mode=='Normal'",
+    },
+    {
+        "key": "ctrl+p",
+        "command": "quickInput.previous",
+        "when": "inQuickInput || inQuickOpen"
+    },
+    {
+        "key": "ctrl+n",
+        "command": "quickInput.next",
+        "when": "inQuickInput || inQuickOpen"
+    },
+    {
+        "key": "ctrl+p",
+        "command": "selectPrevSuggestion",
+        "when": "suggestWidgetVisible"
+    },
+    {
+        "key": "ctrl+n",
+        "command": "selectNextSuggestion",
+        "when": "suggestWidgetVisible"
+    },
+    {
+        "key": "ctrl+c",
+        "command": "extension.vim_escape",
+        "when": "(vim.mode == 'Insert' || vim.mode == 'Visual' || vim.mode == 'VisualLine')"
+    },
+    {
+        "key": "ctrl+c",
+        "command": "workbench.action.closeQuickOpen",
+        "when": "inQuickInput"
+    },
+    {
+        "key": "ctrl+c",
+        "command": "hideSuggestWidget",
+        "when": "suggestWidgetVisible"
+    },
+    {
+        "key": "ctrl+c",
+        "command": "workbench.action.closeQuickOpen",
+        "when": "inQuickInput"
+    },
+    // {
+    // Doesn't work
+    //     "key": "ctrl+c",
+    //     "command": "editor.action.peekDefinition", (there is no closePeek)
+    //     "when": "???"
+    // },
+    // {
+    //     "key": "ctrl+a",
+    //     "command": "problems.action.showQuickFixes",
+    //     "when": "editorFocus"
+    // },
+    {
+        "key": "ctrl+w",
+        "command": "workbench.action.focusFirstEditorGroup",
+        "when": "!editorFocus"
+    },
+    {
+        "key": "g r",
+        "command": "references-view.findReferences",
+        "when": "editorTextFocus && vim.mode=='Normal'"
+    },
+    {
+        "key": "g p r",
+        "command": "references-view.showCallHierarchy",
+        "when": "editorTextFocus && vim.mode=='Normal'",
+    },
+    {
+        "key": "shift+insert",
+        "command": "-editor.action.clipboardPasteAction"
+    },
+    {
+        "key": "ctrl+v",
+        "command": "-editor.action.clipboardPasteAction"
+    },
+    {
+        "key": "ctrl+v",
+        "command": "-editor.action.clipboardPasteAction"
+    },
+    {
+        "key": "tab",
+        "command": "editor.action.inlineSuggest.acceptNextLine",
+        "when": "inlineSuggestionVisible && !editorReadonly"
+    },
+    // emacs
+    // m-x
+    {
+        "key": "alt+x",
+        "command": "workbench.action.showCommands"
+    },
+    {
+        "key": "ctrl+g",
+        "command": "extension.vim_escape",
+        "when": "(vim.mode == 'Insert' || vim.mode == 'Visual' || vim.mode == 'VisualLine')"
+    },
+    {
+        "key": "ctrl+g",
+        "command": "workbench.action.closeQuickOpen",
+        "when": "inQuickInput"
+    },
+    {
+        "key": "ctrl+g",
+        "command": "hideSuggestWidget",
+        "when": "suggestWidgetVisible"
+    },
+    {
+        "key": "ctrl+g",
+        "command": "workbench.action.closeQuickOpen",
+        "when": "inQuickInput"
+    },
+]
